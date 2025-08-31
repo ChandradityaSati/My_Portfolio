@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chandraditya Sati - Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="CSS/home.css">
+  <link rel="stylesheet" href="CSS/about.css">
+  <link rel="stylesheet" href="CSS/skills.css">
+  <link rel="stylesheet" href="CSS/projects.css">
+  <link rel="stylesheet" href="CSS/contact.css">
+</head>
+
+<body class="antialiased">
+  <!-- Navbar -->
+  <nav
+    class="sticky top-0 z-50 p-4 sm:px-8 bg-black bg-opacity-50 backdrop-blur-md flex justify-between items-center rounded-b-xl">
+    <div class="text-xl font-bold text-white">
+      Developer<span class="text-purple-500">CSX</span>
+    </div>
+    <div class="sm:hidden">
+      <button id="hamburger-btn" class="text-white focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+    <ul id="nav-menu" class="hidden sm:flex space-x-6 text-sm font-semibold">
+      <li><a href="#home" class="hover:text-purple-500 transition-colors">Home</a></li>
+      <li><a href="#about" class="hover:text-purple-500 transition-colors">About</a></li>
+      <li><a href="#skills" class="hover:text-purple-500 transition-colors">Skills</a></li>
+      <li><a href="#projects" class="hover:text-purple-500 transition-colors">Projects</a></li>
+      <li><a href="#contact" class="hover:text-purple-500 transition-colors">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobile-menu"
+    class="hidden sm:hidden bg-gray-900 rounded-b-lg shadow-xl py-4 transition-all duration-300 ease-in-out">
+    <ul class="flex flex-col items-center space-y-4 text-white">
+      <li><a href="#home" class="hover:text-purple-500">Home</a></li>
+      <li><a href="#about" class="hover:text-purple-500">About</a></li>
+      <li><a href="#skills" class="hover:text-purple-500">Skills</a></li>
+      <li><a href="#projects" class="hover:text-purple-500">Projects</a></li>
+      <li><a href="#contact" class="hover:text-purple-500">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- Home Section -->
+    <section id="home"
+      class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center py-16 px-4 sm:px-8 gap-12 text-center md:text-left">
+      <div class="flex-1 max-w-2xl">
+        <h3 id="typed-output" class="text-xl sm:text-2xl font-semibold text-purple-400 mb-2"></h3>
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight mt-4">
+          <span id="im-text"></span><br>
+          <span id="name" class="text-purple-500"></span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-400 mt-4 leading-relaxed">
+          An AI Enthusiast & Developer ⚙️👨‍💻
+        </p>
+        <div class="mt-6 space-y-4 text-left text-gray-400">
+          <p class="text-justify">
+            💡 My journey is all about building smarter solutions. I blend a deep passion for **AI and machine
+            learning** with a strong foundation in modern web technologies to create projects that have a real impact.
+          </p>
+          <p class="text-justify">
+            💻 I thrive on turning innovative ideas into practical applications, focusing on **clean, efficient code**
+            and robust logic. Problem-solving, especially with **Data Structures & Algorithms (DSA)**, is at the core of
+            my work.
+          </p>
+          <p class="text-justify">
+            🎶 Beyond the screen, I find my creativity through music as a **trained tabla artist**. This unique blend of
+            technical skill and artistic expression drives my love for innovation and continuous learning.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+          <a href="#contact"
+            class="bg-purple-600 hover:bg-purple-700 transition-colors text-white font-bold py-3 px-6 rounded-full shadow-lg">
+            Hire me
+          </a>
+          <a href="#"
+            class="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white transition-colors font-bold py-3 px-6 rounded-full">
+            Download CV
+          </a>
+        </div>
+        <div class="flex justify-center md:justify-start gap-6 mt-8">
+          <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-purple-500 transition-colors"><i
+              class="fab fa-facebook-f text-2xl"></i></a>
+          <a href="https://www.instagram.com/_chandraditya_sati_/" aria-label="Instagram"
+            class="text-gray-400 hover:text-purple-500 transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+          <a href="https://www.linkedin.com/in/chandraditya-sati-30490b293/" aria-label="LinkedIn"
+            class="text-gray-400 hover:text-purple-500 transition-colors"><i class="fab fa-linkedin text-2xl"></i></a>
+          <a href="https://github.com/ChandradityaSati" aria-label="GitHub"
+            class="text-gray-400 hover:text-purple-500 transition-colors"><i class="fab fa-github text-2xl"></i></a>
+        </div>
+      </div>
+      <div class="flex-shrink-0 mt-8 md:mt-0">
+        <img src="IMAGES/PHOTO.png" alt="Profile Photo" class="home-photo glow-effect">
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-8 bg-gray-900">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">About <span class="text-purple-500">Me</span></h2>
+      <div class="max-w-4xl mx-auto flex flex-col items-center">
+        <p class="text-lg text-gray-400 text-center mb-10 leading-relaxed">
+          Hello! I'm <strong>Chandraditya Sati</strong>, a second-year BTech student specializing in <strong>AI
+            Engineering</strong>.
+          With a strong passion for Python, machine learning, and intelligent systems, I am constantly looking to grow
+          and build smart solutions that can make an impact.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+          <!-- Education Box -->
+          <div class="bg-gray-800 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+            <h3 class="text-2xl font-semibold mb-4 text-purple-400">🎓 Education</h3>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <span class="w-3 h-3 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-lg text-white">B.Tech. [Electronics & Communication Engineering]</strong><br>
+                  <p class="text-sm text-gray-400">Bipin Tripathi Kumaon Institute of Technology<br>
+                    Uttarakhand Technical University, 2023 – 2027<br>
+                    Percentage: 65%</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="w-3 h-3 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-lg text-white">12th Grade (PCM)</strong><br>
+                  <p class="text-sm text-gray-400">Nirmala Convent Senior Secondary School, 2023<br>
+                    Percentage: 92%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Hobbies Box -->
+          <div class="bg-gray-800 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+            <h3 class="text-2xl font-semibold mb-4 text-purple-400">🎯 Hobbies</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center text-gray-400">
+                <span class="w-3 h-3 bg-purple-500 rounded-full mr-3 flex-shrink-0"></span>
+                <strong>Playing Tabla (Visharad)</strong> – Classical expression
+              </li>
+              <li class="flex items-center text-gray-400">
+                <span class="w-3 h-3 bg-purple-500 rounded-full mr-3 flex-shrink-0"></span>
+                <strong>Music Production & Covers</strong> – Composing, remixing
+              </li>
+              <li class="flex items-center text-gray-400">
+                <span class="w-3 h-3 bg-purple-500 rounded-full mr-3 flex-shrink-0"></span>
+                <strong>Coding & AI Exploration</strong> – Learning systems
+              </li>
+              <li class="flex items-center text-gray-400">
+                <span class="w-3 h-3 bg-purple-500 rounded-full mr-3 flex-shrink-0"></span>
+                <strong>Teaching and Mentoring</strong> – Sharing knowledge
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-8 bg-black">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">🚀 My <span class="text-purple-500">Skills</span>
+      </h2>
+      <div class="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
+        <!-- Skill Card 1 -->
+        <div
+          class="w-full sm:w-[45%] md:w-[30%] p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 text-center bg-gray-800">
+          <div class="flex flex-col items-center">
+            <i class="fab fa-python text-5xl text-fuchsia-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-purple-400 mb-2">Python</h3>
+            <p class="text-sm text-gray-400">Proficient in Python for development, data analysis, and AI.</p>
+          </div>
+        </div>
+        <!-- Skill Card 2 -->
+        <div
+          class="w-full sm:w-[45%] md:w-[30%] p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 text-center bg-gray-800">
+          <div class="flex flex-col items-center">
+            <i class="fas fa-brain text-5xl text-fuchsia-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-purple-400 mb-2">Machine Learning</h3>
+            <p class="text-sm text-gray-400">Experience with TensorFlow, Scikit-learn, and building intelligent systems.
+            </p>
+          </div>
+        </div>
+        <!-- Skill Card 3 -->
+        <div
+          class="w-full sm:w-[45%] md:w-[30%] p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 text-center bg-gray-800">
+          <div class="flex flex-col items-center">
+            <i class="fas fa-code text-5xl text-fuchsia-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-purple-400 mb-2">Data Structures & Algorithms</h3>
+            <p class="text-sm text-gray-400">Strong problem-solving and coding skills for efficient solutions.</p>
+          </div>
+        </div>
+        <!-- Skill Card 4 -->
+        <div
+          class="w-full sm:w-[45%] md:w-[30%] p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 text-center bg-gray-800">
+          <div class="flex flex-col items-center">
+            <i class="fas fa-cogs text-5xl text-fuchsia-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-purple-400 mb-2">IoT & Arduino</h3>
+            <p class="text-sm text-gray-400">Building projects with Arduino, Raspberry Pi, and other IoT devices.</p>
+          </div>
+        </div>
+        <!-- Skill Card 5 -->
+        <div
+          class="w-full sm:w-[45%] md:w-[30%] p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 text-center bg-gray-800">
+          <div class="flex flex-col items-center">
+            <i class="fas fa-globe text-5xl text-fuchsia-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-purple-400 mb-2">Web Development</h3>
+            <p class="text-sm text-gray-400">Skilled in modern web technologies to create dynamic applications.</p>
+          </div>
+        </div>
+        <!-- Skill Card 6 -->
+        <div
+          class="w-full sm:w-[45%] md:w-[30%] p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 text-center bg-gray-800">
+          <div class="flex flex-col items-center">
+            <i class="fas fa-music text-5xl text-fuchsia-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-purple-400 mb-2">Music Production</h3>
+            <p class="text-sm text-gray-400">Combining technical skills with creativity in music and art.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 sm:px-8 bg-gray-900">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">💼 My <span class="text-purple-500">Projects</span>
+      </h2>
+      <div class="projects-grid mx-auto max-w-6xl w-full">
+        <!-- Project Card 1 -->
+        <a href="https://github.com/ChandradityaSati" class="project-card-new block rounded-xl overflow-hidden">
+          <img src="IMAGES/AI MUSIC GNERE.avif" alt="Project Screenshot" class="project-image">
+          <div class="project-content p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Music Genre Classifier</h3>
+            <p class="text-gray-400 text-sm">Predicts music genres by analyzing audio signals using MFCC and deep
+              learning.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Scikit-learn</span>
+            </div>
+            <div class="flex justify-end gap-4 mt-4">
+              <i class="fa-solid fa-code text-xl text-purple-400 hover:text-purple-600 transition-colors"></i>
+              <i class="fa-brands fa-github text-xl text-purple-400 hover:text-purple-600 transition-colors"></i>
+            </div>
+          </div>
+        </a>
+        <!-- Project Card 2 -->
+        <a href="https://github.com/ChandradityaSati" class="project-card-new block rounded-xl overflow-hidden">
+          <img src="IMAGES/TABLA FRONT.png" alt="Project Screenshot" class="project-image">
+          <div class="project-content p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Tabla Training Website</h3>
+            <p class="text-gray-400 text-sm">Interactive website for tabla classes, with course listings, bookings, and
+              teacher profiles.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="flex justify-end gap-4 mt-4">
+              <i class="fa-solid fa-code text-xl text-purple-400 hover:text-purple-600 transition-colors"></i>
+              <i class="fa-brands fa-github text-xl text-purple-400 hover:text-purple-600 transition-colors"></i>
+            </div>
+          </div>
+        </a>
+        <!-- Project Card 3 -->
+        <a href="https://github.com/ChandradityaSati" class="project-card-new block rounded-xl overflow-hidden">
+          <img src="IMAGES/SECURITY SYSTEM.png" alt="Project Screenshot" class="project-image">
+          <div class="project-content p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Arduino Security System</h3>
+            <p class="text-gray-400 text-sm">Uses Arduino and sensors to detect motion, trigger alarms, and send GSM
+              alerts.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tech-tag">Arduino</span>
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">IoT</span>
+            </div>
+            <div class="flex justify-end gap-4 mt-4">
+              <i class="fa-solid fa-code text-xl text-purple-400 hover:text-purple-600 transition-colors"></i>
+              <i class="fa-brands fa-github text-xl text-purple-400 hover:text-purple-600 transition-colors"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- GitHub Button -->
+      <div class="flex justify-center mt-12">
+        <a href="https://github.com/ChandradityaSati"
+          class="bg-purple-600 hover:bg-purple-700 transition-colors text-white font-bold py-4 px-8 rounded-full shadow-lg flex items-center gap-2 text-lg">
+          Check My GitHub <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-8 bg-black">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">Contact <span class="text-purple-500">Me</span></h2>
+      <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 items-center md:items-start">
+        <!-- Address Section -->
+        <div class="w-full md:w-1/2 p-8 rounded-2xl shadow-lg bg-gray-800 space-y-6">
+          <h3 class="text-2xl font-bold text-purple-400 mb-4">Address</h3>
+          <div class="flex items-center text-gray-400">
+            <i class="fas fa-map-marker-alt text-2xl text-fuchsia-400 mr-4"></i>
+            <div>
+              <p class="text-lg">Haldwani, Uttarakhand</p>
+              <p class="text-lg">263139</p>
+            </div>
+          </div>
+          <div class="flex items-center text-gray-400">
+            <i class="fas fa-phone-alt text-2xl text-fuchsia-400 mr-4"></i>
+            <a href="tel:your-phone-number" class="text-lg hover:text-purple-400 transition-colors">+91 9410959664</a>
+          </div>
+          <div class="flex items-center text-gray-400">
+            <i class="fas fa-envelope text-2xl text-fuchsia-400 mr-4"></i>
+            <a href="mailto:your-email@example.com"
+              class="text-lg hover:text-purple-400 transition-colors">chandradityasati@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="w-full md:w-1/2 p-8 rounded-2xl shadow-lg bg-gray-800">
+          <form id="contact-form" class="space-y-6">
+            <div class="relative">
+              <i class="fas fa-user-alt absolute left-4 top-1/2 -translate-y-1/2 text-purple-400"></i>
+              <input type="text" id="name" name="name" placeholder="Enter your name"
+                class="w-full pl-12 pr-4 py-3 bg-gray-700 text-white border-2 border-purple-500 rounded-lg focus:outline-none focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-400 transition-all">
+            </div>
+            <div class="relative">
+              <i class="fas fa-envelope-open-text absolute left-4 top-1/2 -translate-y-1/2 text-purple-400"></i>
+              <input type="email" id="email" name="email" placeholder="Enter your email"
+                class="w-full pl-12 pr-4 py-3 bg-gray-700 text-white border-2 border-purple-500 rounded-lg focus:outline-none focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-400 transition-all">
+            </div>
+            <div class="relative">
+              <i class="fas fa-comment-alt absolute left-4 top-6 -translate-y-1/2 text-purple-400"></i>
+              <textarea id="message" name="message" rows="6" placeholder="Enter your message"
+                class="w-full pl-12 pr-4 py-3 bg-gray-700 text-white border-2 border-purple-500 rounded-lg focus:outline-none focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-400 transition-all"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full bg-purple-600 hover:bg-purple-700 transition-colors text-white font-bold py-3 px-6 rounded-lg text-lg">
+              Send Message
+            </button>
+          </form>
+          <div id="form-message" class="mt-4 text-center text-sm font-semibold"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Message Card -->
+    <div id="success-message"
+      class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50 transition-opacity duration-300 opacity-0 pointer-events-none">
+      <div
+        class="bg-gray-800 p-8 rounded-lg shadow-xl text-center max-w-sm w-full transform -translate-y-4 scale-95 transition-transform duration-300">
+        <i class="fas fa-check-circle text-6xl text-green-500 mb-4 animate-bounce"></i>
+        <h3 class="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+        <p class="text-gray-400">Thank you for reaching out. I'll get back to you as soon as I can.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-6 px-4 sm:px-8 text-center text-gray-500 text-sm">
+      <p>&copy; 2025 Chandraditya Sati. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <!-- Firebase CDN -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, collection, addDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    const appId = "1:877092300965:web:08d67c2fd93159e6a0054c";
+    const firebaseConfig = {
+      apiKey: "AIzaSyD1MIjTU52pPHq23ynYOfuaH8uBAg9z6Qo",
+      authDomain: "my-portfolio-83d9a.firebaseapp.com",
+      projectId: "my-portfolio-83d9a",
+      storageBucket: "my-portfolio-83d9a.firebasestorage.app",
+      messagingSenderId: "877092300965",
+      appId: "1:877092300965:web:08d67c2fd93159e6a0054c",
+      measurementId: "G-RTTMBNKC0J"
+    };
+    const authToken = ""; // This is typically left blank for your main page
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    // Set Firestore log level for debugging
+    setLogLevel('debug');
+
+    // Authenticate with custom token
+    async function authenticate() {
+      if (authToken) {
+        try {
+          await signInWithCustomToken(auth, authToken);
+          console.log("Authenticated successfully with custom token.");
+        } catch (error) {
+          console.error("Firebase authentication error:", error);
+        }
+      } else {
+        console.log("No auth token provided. App will run in anonymous mode if allowed by rules.");
+      }
+    }
+
+    authenticate();
+
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+    const successMessage = document.getElementById('success-message');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Prevent default form submission
+
+      const name = contactForm.name.value;
+      const email = contactForm.email.value;
+      const message = contactForm.message.value;
+
+      formMessage.textContent = 'Sending message...';
+      formMessage.classList.remove('text-green-500', 'text-red-500');
+      formMessage.classList.add('text-yellow-500');
+
+      if (!name || !email || !message) {
+        formMessage.textContent = 'Please fill out all fields.';
+        formMessage.classList.add('text-red-500');
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, `/artifacts/${appId}/public/data/messages`), {
+          name,
+          email,
+          message,
+          timestamp: new Date()
+        });
+
+        // Show success message card
+        successMessage.classList.remove('opacity-0', 'pointer-events-none');
+        successMessage.classList.add('opacity-100');
+
+        // Update inline form message
+        formMessage.textContent = 'Message sent successfully!';
+        formMessage.classList.remove('text-yellow-500', 'text-red-500');
+        formMessage.classList.add('text-green-500');
+
+        // Hide success message after 3 seconds
+        setTimeout(() => {
+          successMessage.classList.add('opacity-0', 'pointer-events-none');
+          successMessage.classList.remove('opacity-100');
+        }, 3000);
+
+        contactForm.reset(); // Clear the form
+
+      } catch (error) {
+        console.error("Error writing document: ", error);
+        formMessage.textContent = 'Failed to send message. Please try again later.';
+        formMessage.classList.remove('text-yellow-500');
+        formMessage.classList.add('text-red-500');
+      }
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile menu toggle
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const navMenuLinks = document.querySelectorAll('#nav-menu a, #mobile-menu a');
+
+      hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      navMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        });
+      });
+
+      // Typed text animation logic
+      const hiText = "👋 Hi, there!";
+      const imText = "I'm ";
+      const nameText = "Chandraditya Sati!";
+      const hiOutput = document.getElementById("typed-output");
+      const imOutput = document.getElementById("im-text");
+      const nameOutput = document.getElementById("name");
+      let textState = 0; // 0: Hi, 1: I'm, 2: Name
+      let charIndex = 0;
+
+      function typeWriter() {
+        switch (textState) {
+          case 0: // Typing "Hi, there!"
+            if (charIndex < hiText.length) {
+              hiOutput.textContent += hiText.charAt(charIndex);
+              charIndex++;
+              setTimeout(typeWriter, 120);
+            } else {
+              textState = 1;
+              charIndex = 0;
+              setTimeout(typeWriter, 400);
+            }
+            break;
+          case 1: // Typing "I'm "
+            if (charIndex < imText.length) {
+              imOutput.textContent += imText.charAt(charIndex);
+              charIndex++;
+              setTimeout(typeWriter, 120);
+            } else {
+              textState = 2;
+              charIndex = 0;
+              setTimeout(typeWriter, 300);
+            }
+            break;
+          case 2: // Typing "Chandraditya Sati!"
+            if (charIndex < nameText.length) {
+              nameOutput.textContent += nameText.charAt(charIndex);
+              charIndex++;
+              setTimeout(typeWriter, 120);
+            }
+            break;
+        }
+      }
+
+      typeWriter();
+    });
+  </script>
+</body>
+
+</html>

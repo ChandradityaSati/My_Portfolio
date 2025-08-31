@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="p-8">
+
+  <!-- Login Section -->
+  <section id="login" class="max-w-md mx-auto p-6 bg-gray-800 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold text-center text-purple-500 mb-6">Admin Login</h2>
+    <form id="login-form" class="space-y-4">
+      <input type="email" id="email" placeholder="Enter email"
+        class="w-full px-4 py-3 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+      <input type="password" id="password" placeholder="Enter password"
+        class="w-full px-4 py-3 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+      <button type="submit"
+        class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-md transition-colors">Login</button>
+    </form>
+    <div id="login-message" class="mt-4 text-center text-sm font-semibold"></div>
+  </section>
+
+  <!-- Dashboard Section -->
+  <section id="dashboard" class="hidden">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-3xl font-bold text-white">Inbox</h2>
+      <button id="delete-all-btn"
+        class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition-colors">Delete
+        All</button>
+    </div>
+
+    <div id="messages-container" class="space-y-4">
+      <!-- Messages will be injected here -->
+    </div>
+  </section>
+
+  <!-- Firebase CDN -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, collection, onSnapshot, deleteDoc, doc, setLogLevel, getDocs, writeBatch } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyD1MIjTU52pPHq23ynYOfuaH8uBAg9z6Qo",
+      authDomain: "my-portfolio-83d9a.firebaseapp.com",
+      projectId: "my-portfolio-83d9a",
+      storageBucket: "my-portfolio-83d9a.firebasestorage.app",
+      messagingSenderId: "877092300965",
+      appId: "1:877092300965:web:08d67c2fd93159e6a0054c",
+      measurementId: "G-RTTMBNKC0J"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+
+
+    setLogLevel('debug');
+
+    const loginForm = document.getElementById('login-form');
+    const dashboardSection = document.getElementById('dashboard');
+    const loginSection = document.getElementById('login');
+    const messagesContainer = document.getElementById('messages-container');
+    const deleteAllBtn = document.getElementById('delete-all-btn');
+    const loginMessage = document.getElementById('login-message');
+
+    // Login logic
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailInput = document.getElementById('email').value;
+      const passwordInput = document.getElementById('password').value;
+      loginMessage.textContent = ''; // Clear previous messages
+      try {
+        await signInWithEmailAndPassword(auth, emailInput, passwordInput);
+        loginSection.classList.add('hidden');
+        dashboardSection.classList.remove('hidden');
+        loadMessages();
+      } catch (error) {
+        console.error("Firebase authentication error:", error);
+        let errorMessage = 'Login failed. Please try again.';
+        if (error.code === 'auth/invalid-email' || error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+          errorMessage = 'Invalid email or password.';
+        }
+        loginMessage.textContent = errorMessage;
+        loginMessage.classList.add('text-red-500');
+      }
+    });
+
+
+    const appId = "1:877092300965:web:08d67c2fd93159e6a0054c";
+
+    // Load messages from Firestore
+    function loadMessages() {
+      // You would use your actual appId here
+
+      const messagesRef = collection(db, `/artifacts/${appId}/public/data/messages`);
+
+      onSnapshot(messagesRef, (snapshot) => {
+        messagesContainer.innerHTML = ''; // Clear existing messages
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          const messageCard = document.createElement('div');
+          messageCard.className = 'p-6 bg-gray-800 rounded-lg shadow-lg relative message-card';
+          messageCard.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-lg text-white">From: ${data.name}</h3>
+                        <button class="delete-btn text-red-400 hover:text-red-600 transition-colors" data-id="${doc.id}">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">${data.email}</p>
+                    <p class="text-gray-300 leading-relaxed mb-4">${data.message}</p>
+                    <p class="text-xs text-gray-500 text-right">${data.timestamp ? new Date(data.timestamp.toDate()).toLocaleString() : 'N/A'}</p>
+                `;
+
+          messagesContainer.appendChild(messageCard);
+        });
+      });
+    }
+
+    // SINGLE DELETE using event delegation
+    messagesContainer.addEventListener('click', async (event) => {
+      const button = event.target.closest('.delete-btn');
+      if (!button) return; // Not a delete button
+      const docId = button.getAttribute('data-id');
+      try {
+        await deleteDoc(doc(db, `/artifacts/${appId}/public/data/messages`, docId));
+        console.log("Message deleted:", docId);
+      } catch (error) {
+        console.error("Error deleting message:", error);
+      }
+    });
+
+
+    // Delete all messages
+    deleteAllBtn.addEventListener('click', async () => {
+      if (confirm('Are you sure you want to delete all messages?')) {
+        const messagesRef = collection(db, `/artifacts/${appId}/public/data/messages`);
+        const snapshot = await getDocs(messagesRef);
+        const batch = writeBatch(db);
+        snapshot.forEach((doc) => {
+          batch.delete(doc.ref);
+        });
+        await batch.commit();
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+:root {
+  --primary-color: #6366f1; /* Indigo 500 */
+  --secondary-color: #a855f7; /* Purple 500 */
+  --accent-color: #d946ef; /* Fuchsia 500 */
+  --dark-bg: #0d0d17;
+  --card-bg: #1a1a2e;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #e2e8f0;
+  background-color: var(--dark-bg);
+}
+
+/* Custom cursor animation for the typed text */
+.typed-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.25em;
+  background-color: var(--accent-color);
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Custom glow effect on buttons and elements */
+.glow-effect {
+  animation: glowing 1.5s infinite alternate;
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color), 0 0 15px var(--accent-color); }
+  100% { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
+}
+
+.home-photo {
+width: 20rem;
+height: 20rem;
+object-fit: cover;
+object-position: top center;
+border-radius: 9999px;
+border-width: 4px;
+border-color: #a855f7;
+box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.glow-effect {
+-webkit-animation: glow 1.5s ease-in-out infinite alternate;
+-moz-animation: glow 1.5s ease-in-out infinite alternate;
+animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+from {
+box-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 15px #a855f7;
+}
+to {
+box-shadow: 0 0 20px #a855f7, 0 0 30px #a855f7, 0 0 40px #a855f7;
+}
+}

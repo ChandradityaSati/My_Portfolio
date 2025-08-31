@@ -1,0 +1,10 @@
+:root {
+  --primary-color: #6366f1;
+  /* Indigo 500 */
+  --secondary-color: #a855f7;
+  /* Purple 500 */
+  --accent-color: #d946ef;
+  /* Fuchsia 500 */
+  --dark-bg: #0d0d17;
+  --card-bg: #1a1a2e;
+}
