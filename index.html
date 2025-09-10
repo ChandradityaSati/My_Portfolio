@@ -55,79 +55,86 @@
 
   <main>
     <!-- Home Section -->
-    <section id="home"
-      class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center py-16 px-4 sm:px-8 gap-12 text-center md:text-left">
+<section id="home"
+  class="relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-center py-16 px-4 sm:px-8 gap-12 text-center md:text-left bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden">
 
-      <!-- Text Content -->
-      <div class="flex-1 max-w-xl md:max-w-2xl space-y-6">
+  <!-- Background Blobs -->
+  <div class="absolute top-10 left-10 w-72 h-72 bg-purple-700/30 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-10 right-10 w-72 h-72 bg-pink-600/30 rounded-full blur-3xl animate-pulse"></div>
 
-        <!-- Small Intro / Typing Effect -->
-        <h3 id="typed-output" class="text-xl sm:text-2xl font-semibold text-purple-400"></h3>
+  <!-- Text Content -->
+  <div class="flex-1 max-w-xl md:max-w-2xl space-y-6 relative z-10">
 
-        <!-- Main Heading -->
-        <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight mt-4">
-          <span id="im-text"></span><br>
-          <span id="name" class="text-purple-500"></span>
-        </h1>
+    <!-- Small Intro / Typing Effect -->
+    <h3 id="typed-output" class="text-xl sm:text-2xl font-semibold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"></h3>
 
-        <!-- Short Tagline -->
-        <p class="text-lg sm:text-xl text-gray-400">
-          An AI Enthusiast & Developer ⚙️👨‍💻
-        </p>
+    <!-- Main Heading -->
+    <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight mt-4">
+      <span id="im-text" class="text-gray-100"></span><br>
+      <span id="name"
+        class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent animate-text">
+      </span>
+    </h1>
 
-        <!-- Paragraphs -->
-        <div class="space-y-4 text-gray-400">
-          <p class="text-center md:text-left leading-relaxed">
-            💡 My journey is all about building smarter solutions. I blend a deep passion for <span
-              class="text-purple-400 font-semibold">AI and Machine Learning</span> with a strong foundation in modern
-            web technologies to create projects that have a real impact.
-          </p>
-          <p class="text-center md:text-left leading-relaxed">
-            💻 I thrive on turning innovative ideas into practical applications, focusing on <span
-              class="text-purple-400 font-semibold">clean, efficient code</span> and robust logic. Problem-solving,
-            especially with <span class="text-purple-400 font-semibold">Data Structures & Algorithms (DSA)</span>, is at
-            the core of my work.
-          </p>
-          <p class="text-center md:text-left leading-relaxed">
-            🎶 Beyond the screen, I find my creativity through music as a <span
-              class="text-purple-400 font-semibold">trained tabla artist</span>. This blend of technical skill and
-            artistic expression drives my love for innovation and continuous learning.
-          </p>
-        </div>
+    <!-- Short Tagline -->
+    <p class="text-lg sm:text-xl text-gray-300 italic">
+      An AI Enthusiast & Developer ⚙️👨‍💻
+    </p>
 
-        <!-- Buttons -->
-        <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
-          <a href="#contact"
-            class="bg-purple-600 hover:bg-purple-700 transition-colors text-white font-bold py-3 px-6 rounded-full shadow-lg">
-            Hire Me
-          </a>
-          <a href="#"
-            class="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white transition-colors font-bold py-3 px-6 rounded-full">
-            Download CV
-          </a>
-        </div>
+    <!-- Paragraphs -->
+    <div class="space-y-4 text-gray-400">
+      <p class="text-center md:text-left leading-relaxed">
+        💡 My journey is all about building smarter solutions. I blend a deep passion for
+        <span class="text-purple-400 font-semibold">AI and Machine Learning</span>
+        with modern web technologies to create impactful projects.
+      </p>
+      <p class="text-center md:text-left leading-relaxed">
+        💻 I thrive on turning innovative ideas into practical applications with
+        <span class="text-purple-400 font-semibold">clean, efficient code</span> and
+        <span class="text-purple-400 font-semibold">DSA problem-solving</span>.
+      </p>
+      <p class="text-center md:text-left leading-relaxed">
+        🎶 Beyond the screen, I find creativity through music as a
+        <span class="text-purple-400 font-semibold">trained tabla artist</span>.
+      </p>
+    </div>
 
-        <!-- Social Links -->
-        <div class="flex justify-center md:justify-start gap-6 mt-6">
-          <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-purple-500 transition-colors"><i
-              class="fab fa-facebook-f text-2xl"></i></a>
-          <a href="https://www.instagram.com/_chandraditya_sati_/" aria-label="Instagram"
-            class="text-gray-400 hover:text-purple-500 transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
-          <a href="https://www.linkedin.com/in/chandraditya-sati-30490b293/" aria-label="LinkedIn"
-            class="text-gray-400 hover:text-purple-500 transition-colors"><i class="fab fa-linkedin text-2xl"></i></a>
-          <a href="https://github.com/ChandradityaSati" aria-label="GitHub"
-            class="text-gray-400 hover:text-purple-500 transition-colors"><i class="fab fa-github text-2xl"></i></a>
-        </div>
-      </div>
+    <!-- Buttons -->
+    <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
+      <a href="#contact"
+        class="bg-purple-600 hover:bg-purple-700 transition transform hover:scale-105 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-purple-500/40">
+        Hire Me
+      </a>
+      <a href="#"
+        class="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white transition transform hover:scale-105 font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-purple-500/40">
+        Download CV
+      </a>
+    </div>
 
-      <!-- Profile Photo -->
-      <div class="flex-shrink-0 mt-8 md:mt-0">
-        <img src="IMAGES/PHOTO.png" alt="Profile Photo"
-          class="home-photo rounded-full border-4 border-purple-600 shadow-xl glow-effect">
-      </div>
+    <!-- Social Links -->
+    <div class="flex justify-center md:justify-start gap-6 mt-6">
+      <a href="#" aria-label="Facebook"
+        class="text-gray-400 hover:text-purple-500 transition transform hover:scale-110"><i
+          class="fab fa-facebook-f text-2xl"></i></a>
+      <a href="https://www.instagram.com/_chandraditya_sati_/" aria-label="Instagram"
+        class="text-gray-400 hover:text-pink-500 transition transform hover:scale-110"><i
+          class="fab fa-instagram text-2xl"></i></a>
+      <a href="https://www.linkedin.com/in/chandraditya-sati-30490b293/" aria-label="LinkedIn"
+        class="text-gray-400 hover:text-blue-500 transition transform hover:scale-110"><i
+          class="fab fa-linkedin text-2xl"></i></a>
+      <a href="https://github.com/ChandradityaSati" aria-label="GitHub"
+        class="text-gray-400 hover:text-green-500 transition transform hover:scale-110"><i
+          class="fab fa-github text-2xl"></i></a>
+    </div>
+  </div>
 
-    </section>
+  <!-- Profile Photo -->
+  <div class="flex-shrink-0 mt-8 md:mt-0 relative z-10">
+    <img src="IMAGES/PHOTO.png" alt="Profile Photo"
+      class="home-photo rounded-full border-4 border-purple-600 shadow-2xl glow-effect animate-float">
+  </div>
 
+</section>
 
     <!-- About Section -->
     <section id="about" class="py-20 px-4 sm:px-8 bg-gray-900">

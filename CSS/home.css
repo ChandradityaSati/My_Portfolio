@@ -1,7 +1,10 @@
 :root {
-  --primary-color: #6366f1; /* Indigo 500 */
-  --secondary-color: #a855f7; /* Purple 500 */
-  --accent-color: #d946ef; /* Fuchsia 500 */
+  --primary-color: #6366f1;
+  /* Indigo 500 */
+  --secondary-color: #a855f7;
+  /* Purple 500 */
+  --accent-color: #d946ef;
+  /* Fuchsia 500 */
   --dark-bg: #0d0d17;
   --card-bg: #1a1a2e;
 }
@@ -22,8 +25,15 @@ body {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 /* Custom glow effect on buttons and elements */
@@ -32,32 +42,66 @@ body {
 }
 
 @keyframes glowing {
-  0% { box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color), 0 0 15px var(--accent-color); }
-  100% { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
+  0% {
+    box-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color), 0 0 15px var(--accent-color);
+  }
+
+  100% {
+    box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+  }
 }
 
 .home-photo {
-width: 20rem;
-height: 20rem;
-object-fit: cover;
-object-position: top center;
-border-radius: 9999px;
-border-width: 4px;
-border-color: #a855f7;
-box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 9999px;
+  border-width: 4px;
+  border-color: #a855f7;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .glow-effect {
--webkit-animation: glow 1.5s ease-in-out infinite alternate;
--moz-animation: glow 1.5s ease-in-out infinite alternate;
-animation: glow 1.5s ease-in-out infinite alternate;
+  -webkit-animation: glow 1.5s ease-in-out infinite alternate;
+  -moz-animation: glow 1.5s ease-in-out infinite alternate;
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
-from {
-box-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 15px #a855f7;
+  from {
+    box-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 15px #a855f7;
+  }
+
+  to {
+    box-shadow: 0 0 20px #a855f7, 0 0 30px #a855f7, 0 0 40px #a855f7;
+  }
 }
-to {
-box-shadow: 0 0 20px #a855f7, 0 0 30px #a855f7, 0 0 40px #a855f7;
+
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-text {
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
