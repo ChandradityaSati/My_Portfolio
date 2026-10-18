@@ -1,0 +1,8 @@
+{
+  "name": "Chandraditya Sati Portfolio",
+  "description": "Portfolio showcasing projects in Machine Learning, IoT, and Web Development by Chandraditya Sati.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
