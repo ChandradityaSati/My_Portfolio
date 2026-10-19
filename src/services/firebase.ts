@@ -20,16 +20,16 @@ import {
 import { ContactMessage } from '../types';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyD1MIjTU52pPHq23ynYOfuaH8uBAg9z6Qo",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "my-portfolio-83d9a.firebaseapp.com",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "my-portfolio-83d9a",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "my-portfolio-83d9a.firebasestorage.app",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "877092300965",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:877092300965:web:08d67c2fd93159e6a0054c",
-  measurementId: "G-RTTMBNKC0J"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "portfolio",
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || ""
 };
 
-const appId = firebaseConfig.appId;
+const appId = firebaseConfig.appId || 'portfolio';
 const COLLECTION_PATH = `/artifacts/${appId}/public/data/messages`;
 const LOCAL_STORAGE_KEY = 'chandraditya_portfolio_messages';
 
@@ -37,12 +37,14 @@ let app: any = null;
 let db: any = null;
 let auth: any = null;
 
-try {
-  app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-  db = getFirestore(app);
-  auth = getAuth(app);
-} catch (err) {
-  console.warn('Firebase initialization warning:', err);
+if (firebaseConfig.apiKey) {
+  try {
+    app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+    db = getFirestore(app);
+    auth = getAuth(app);
+  } catch (err) {
+    console.warn('Firebase initialization warning:', err);
+  }
 }
 
 // Local storage fallback helpers
