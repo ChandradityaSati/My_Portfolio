@@ -32,6 +32,8 @@ export interface EducationItem {
   school: string;
   location: string;
   affiliation: string;
+  board?: string;
+  levelBadge?: string;
   score: string;
   scoreBadge?: string;
   statusBadge: string;

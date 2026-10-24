@@ -11,6 +11,10 @@ export const Hero: React.FC = () => {
     const roles = PERSONAL_INFO.typedRoles;
     const current = roles[roleIndex];
 
+    const typingSpeed = 110; // Relaxed, comfortable typing pace
+    const deletingSpeed = 55;
+    const holdCompletedSpeed = 2600; // Generous dwell time to read complete text
+
     const timer = setTimeout(
       () => {
         if (!isDeleting) {
@@ -30,7 +34,7 @@ export const Hero: React.FC = () => {
           }
         }
       },
-      isDeleting ? 40 : charIndex === current.length ? 2200 : 75
+      isDeleting ? deletingSpeed : charIndex === current.length ? holdCompletedSpeed : typingSpeed
     );
 
     return () => clearTimeout(timer);
